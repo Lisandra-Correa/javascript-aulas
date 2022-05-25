@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista dinâmica</title>
+</head>
+<body>
+    <main>
+        <h1>Lista dinâmica</h1>
+        <p>Escolham o tipo de lista que ira aparecer</p>
+
+        <form action="lista.php" method="get" onsubmit="return list()">
+            <p>
+                <label for="tipo">Tipo de lista:</label><br>
+                <select name="tipo" id="tipo">
+                    <option value="opc1">Tabuada de um número</option>
+                    <option value="opc2">Multiplos de 0 a 100</option>
+                </select>
+            </p>
+            <p>
+                <label for="num">Qual seu número?</label> <br>
+                <input type="number" name="num" id="num" max="100">
+
+                <input type="submit" value="Preencher">
+            </p>
+            <p>
+                <label for="lis">Listagem do resultado:</label><br>
+                <select name="lis" id="lis" size="10"></select>
+            </p>
+            
+        </form>
+    </main>
+    <script>
+        function list(){
+            let n = Number(num.value)
+
+            lis.innerHTML = null
+            if (tipo.value == 'opc1'){ 
+                    let c = 1
+
+                while(c <= 10){
+                    let item = document.createElement("option")
+                    item.innerHTML = `${n} x ${c} = ${n*c}`
+                    lis.add(item)
+                    c++
+                }
+            }
+            else if (tipo.value == 'opc2'){
+                let c = 0
+                while (c <= 100){
+                    if(c % n == 0){
+                        let item = document.createElement("option")
+                        item.innerHTML = `${c} é divisivel por ${n}`
+                        lis.add(item)
+                    }
+                    c++
+                }
+            }
+            return false
+        }
+    </script>
+    <footer><a href="index.html">Voltar</a></footer>
+</body>
+</html>
