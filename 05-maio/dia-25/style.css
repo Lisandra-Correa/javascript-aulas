@@ -1,0 +1,12 @@
+body{
+    background-color: aqua;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main, footer{
+    background-color: white;
+    padding: 15px ;
+    margin: auto;
+    max-width: 500px;
+    border-radius: 15px;
+
+}
