@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Somador de valores</h1>
+        <button onclick="soma()">Iniciar</button>
+        <p id="res"></p>
+    </main>
+    <script>
+        function soma(){
+            let c = 1
+            let n = 0
+            let s = 0
+            while(c <= 5){
+                n = Number(prompt("Digite um valor:"))
+                s = s + n
+                c++
+            }
+            let m = s / 5
+            res.innerHTML = `A soma de todos os valores digitaods foi ${s}.<br>`
+            res.innerHTML += `E a média entre os valores é ${m.toFixed(2)}.`
+            return false
+        }
+    </script>
+</body>
+</html>
